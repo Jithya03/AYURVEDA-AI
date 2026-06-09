@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="startVoice()">🎤 Test Mic</button>
+
+<script>
+function startVoice() {
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "en-US";
+
+    recognition.onstart = () => console.log("started");
+
+    recognition.onresult = (e) => {
+        alert(e.results[0][0].transcript);
+    };
+
+    recognition.onerror = (e) => {
+        console.log("ERROR:", e.error);
+        alert(e.error);
+    };
+
+    recognition.onend = () => {
+        console.log("ended");
+    };
+
+    recognition.start();
+}
+</script>
+
+</body>
+</html>
