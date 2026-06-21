@@ -28,10 +28,12 @@ DEBUG = False
 
 
 
-ALLOWED_HOSTS = os.environ.get(
-    "ALLOWED_HOSTS",
-    "localhost,127.0.0.1,ayurveda-ai-1.onrender.com"
-).split(",")
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "ayurveda-ai-1.onrender.com",
+    "ayurveda-ai-2.onrender.com",  # if you're creating a new service
+]
 
 
 # Application definition
