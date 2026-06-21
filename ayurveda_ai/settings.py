@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-)l^#e1j8^h48ke#&m#$$t^glt^8$!x04k!jdj+#nn+(ahs-i85
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "ayurveda-ai-sysu.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
