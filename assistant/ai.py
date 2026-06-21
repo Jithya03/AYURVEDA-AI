@@ -1,8 +1,9 @@
 import os
 import google.generativeai as genai
 
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-pro")
+genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 
 def ask_ai(question):
@@ -21,11 +22,7 @@ def ask_ai(question):
         """
 
         response = model.generate_content(prompt)
-
-        if hasattr(response, "text"):
-            return response.text
-
-        return "Sorry, I could not generate a response."
+        return response.text
 
     except Exception as e:
-        return f"Error: {str(e)}"
+        return f"Error: {e}"
